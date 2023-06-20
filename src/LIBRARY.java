@@ -209,4 +209,53 @@ class HappyPlace implements book{
     }
 }
 
+
+
+
+class Product {
+    private int productId;
+    private String productName;
+    private String description;
+    private double price;
+    private String manufacturer;
+    private String category;
+    private int quantityInStock;
+    private boolean isAvailable;
+    private String[] tags;
+    private String imageUrl;
+
+    // Constructor
+    public Product(int productId, String productName, String description, double price, String manufacturer,
+                   String category, int quantityInStock, boolean isAvailable, String[] tags, String imageUrl) {
+        this.productId = productId;
+        this.productName = productName;
+        this.description = description;
+        this.price = price;
+        this.manufacturer = manufacturer;
+        this.category = category;
+        this.quantityInStock = quantityInStock;
+        this.isAvailable = isAvailable;
+        this.tags = tags;
+        this.imageUrl = imageUrl;
+    }
+
+    public int getProductId() {
+        return productId;
+    }
+
+    public void setProductId(int productId) {
+        this.productId = productId;
+    }
+// Getters and Setters (omitted for brevity)
+
+    // Other methods (omitted for brevity)
+}
+class hp1{
+    public static void main(String[] args) {
+        Product product = new Product(1, "Example Product", "This is an example product", 19.99, "Example Manufacturer",
+                "Example Category", 10, true, new String[]{"tag1", "tag2"}, "https://example.com/image.jpg");
+
+        System.out.println(product);
+
+    }
 }

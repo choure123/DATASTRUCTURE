@@ -1,13 +1,36 @@
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Scanner;
+
 
 public class HPPRODUCT {
     public static void main(String[] args) {
         laptop hp1 = new laptop(456, 840, 00351, 1, 2307, 12, 1.5000);
-
+        printer hp2 = new printer(567, 678, 4567, 5678, 567, 23456, 5.67);
+        ink hp3 = new ink(456.5, 788, 900, 67, 234, 77889, 678);
+        wirelessmouse hp4 = new wirelessmouse(345, 5667, 78, 678, 55677, 3455, 456);
+        keyboard hp5 = new keyboard(456, 678, 89, 67, 8, 78, 898);
+        workbackpack hp6 = new workbackpack(456, 840, 00351, 1, 2307, 12, 1.5000);
+        bluetoothspeaker hp7 = new bluetoothspeaker(456, 840, 00351, 1, 2307, 12, 1.5000);
+        pendrive hp8 = new pendrive(456.5, 788, 900, 67, 234, 77889, 678);
+        chargerlaptop hp9 = new chargerlaptop(456.5, 788, 900, 67, 234, 77889, 678);
+        USBhub hp10 = new USBhub(456, 840, 00351, 1, 2307, 12, 1.5000);
+        System.out.println(hp10);
+        System.out.println(hp2);
         System.out.println(hp1);
+        System.out.println(hp3);
+        System.out.println(hp4);
+        System.out.println(hp6);
+        System.out.println(hp7);
+        System.out.println(hp8);
+        System.out.println(hp9);
+        hp3.produt();
         hp1.produt();
+        hp2.produt();
+        hp4.produt();
+        hp5.produt();
+        hp6.produt();
+        hp7.produt();
+        hp8.produt();
+        hp9.produt();
+        hp10.produt();
     }
 }
 
@@ -67,163 +90,474 @@ class laptop implements hpproduct1 {
 
     }
 }
-class Book {
-    private int id;
-    private String title;
-    private String author;
 
-    public Book(int id, String title, String author) {
-        this.id = id;
-        this.title = title;
-        this.author = author;
-    }
+class printer implements hpproduct1 {
+    int model;
+    int productid;
 
-    public int getId() {
-        return id;
-    }
 
-    public String getTitle() {
-        return title;
-    }
+    int description;
+    double price;
+    double manufacturer;
 
-    public String getAuthor() {
-        return author;
-    }
-}
+    int quantityinStock;
 
-class Library {
-    private List<Book> books;
+    double imgeurl;
 
-    public Library() {
-        books = new ArrayList<>();
-    }
+    public printer(double imgeurl, int productid, int model, int quantityinStock, int description, double price, double manufacturer) {
 
-    public void addBook(Book book) {
-        books.add(book);
-    }
-
-    public void displayBooks() {
-        if (books.isEmpty()) {
-            System.out.println("No books available in the library.");
-            return;
-        }
-
-        System.out.println("Library Books:");
-        for (Book book : books) {
-            System.out.println("ID: " + book.getId());
-            System.out.println("Title: " + book.getTitle());
-            System.out.println("Author: " + book.getAuthor());
-            System.out.println("---------------");
-        }
-    }
-
-    public void searchBook(String keyword) {
-        List<Book> matchingBooks = new ArrayList<>();
-
-        for (Book book : books) {
-            if (book.getTitle().toLowerCase().contains(keyword.toLowerCase()) ||
-                    book.getAuthor().toLowerCase().contains(keyword.toLowerCase())) {
-                matchingBooks.add(book);
-            }
-        }
-
-        if (matchingBooks.isEmpty()) {
-            System.out.println("No matching books found.");
-            return;
-        }
-
-        System.out.println("Matching Books:");
-        for (Book book : matchingBooks) {
-            System.out.println("ID: " + book.getId());
-            System.out.println("Title: " + book.getTitle());
-            System.out.println("Author: " + book.getAuthor());
-            System.out.println("---------------");
-        }
-    }
-}
-
-class LibraryManagementSystem {
-    public static void main(String[] args) {
-        Scanner scanner = new Scanner(System.in);
-        Library library = new Library();
-
-        // Adding sample books
-        library.addBook(new Book(1, "Java Programming", "John Smith"));
-        library.addBook(new Book(2, "Python Basics", "Jane Doe"));
-        library.addBook(new Book(3, "Data Structures", "Robert Johnson"));
-
-        while (true) {
-            System.out.println("1. Display all books");
-            System.out.println("2. Search a book");
-            System.out.println("3. Exit");
-            System.out.print("Enter your choice: ");
-            int choice = scanner.nextInt();
-
-            switch (choice) {
-                case 1:
-                    library.displayBooks();
-                    break;
-                case 2:
-                    scanner.nextLine(); // Clear the newline character
-                    System.out.print("Enter a keyword to search: ");
-                    String keyword = scanner.nextLine();
-                    library.searchBook(keyword);
-                    break;
-                case 3:
-                    System.out.println("Exiting the program...");
-                    scanner.close();
-                    System.exit(0);
-                default:
-                    System.out.println("Invalid choice! Please try again.");
-            }
-            System.out.println();
-        }
-    }
-}
- class Product {
-    private int productId;
-    private String productName;
-    private String description;
-    private double price;
-    private String manufacturer;
-    private String category;
-    private int quantityInStock;
-    private boolean isAvailable;
-    private String[] tags;
-    private String imageUrl;
-
-    // Constructor
-    public Product(int productId, String productName, String description, double price, String manufacturer,
-                   String category, int quantityInStock, boolean isAvailable, String[] tags, String imageUrl) {
-        this.productId = productId;
-        this.productName = productName;
+        this.imgeurl = imgeurl;
         this.description = description;
         this.price = price;
         this.manufacturer = manufacturer;
-        this.category = category;
-        this.quantityInStock = quantityInStock;
-        this.isAvailable = isAvailable;
-        this.tags = tags;
-        this.imageUrl = imageUrl;
+        this.model = model;
+        this.quantityinStock = quantityinStock;
+
+
+        this.productid = productid;
+
     }
 
-     public int getProductId() {
-         return productId;
-     }
+    @Override
+    public void produt() {
+        System.out.println("hp product");
 
-     public void setProductId(int productId) {
-         this.productId = productId;
-     }
-// Getters and Setters (omitted for brevity)
+    }
 
-    // Other methods (omitted for brevity)
+    @Override
+    public String toString() {
+        return "printer{" +
+
+                " , imgeurl= ' " + imgeurl + '\'' +
+                ", descripyion= ' " + description + '\'' +
+                ", price = ' " + price + '\'' +
+                " , manufacturer = ' " + manufacturer + '\'' +
+                " , model=' " + model + '\'' +
+                ", quantityinstock=' " + quantityinStock + '\'' +
+
+
+                "' productid='" + productid + '\'' +
+                '}';
+
+
+    }
 }
-class hp1{
-    public static void main(String[] args) {
-        Product product = new Product(1, "Example Product", "This is an example product", 19.99, "Example Manufacturer",
-                "Example Category", 10, true, new String[]{"tag1", "tag2"}, "https://example.com/image.jpg");
 
-        System.out.println(product);
+class ink implements hpproduct1 {
+    int model;
+    int productid;
+
+
+    int description;
+    double price;
+    double manufacturer;
+
+    int quantityinStock;
+
+    double imgeurl;
+
+    public ink(double imgeurl, int productid, int model, int quantityinStock, int description, double price, double manufacturer) {
+
+        this.imgeurl = imgeurl;
+        this.description = description;
+        this.price = price;
+        this.manufacturer = manufacturer;
+        this.model = model;
+        this.quantityinStock = quantityinStock;
+
+
+        this.productid = productid;
 
     }
+
+    @Override
+    public void produt() {
+        System.out.println("hp product");
+
+    }
+
+    @Override
+    public String toString() {
+        return "ink{" +
+
+                " , imgeurl= ' " + imgeurl + '\'' +
+                ", descripyion= ' " + description + '\'' +
+                ", price = ' " + price + '\'' +
+                " , manufacturer = ' " + manufacturer + '\'' +
+                " , model=' " + model + '\'' +
+                ", quantityinstock=' " + quantityinStock + '\'' +
+
+
+                "' productid='" + productid + '\'' +
+                '}';
+
+
+    }
+}
+
+class wirelessmouse implements hpproduct1 {
+    int model;
+    int productid;
+
+
+    int description;
+    double price;
+    double manufacturer;
+
+    int quantityinStock;
+
+    double imgeurl;
+
+    public wirelessmouse(double imgeurl, int productid, int model, int quantityinStock, int description, double price, double manufacturer) {
+
+        this.imgeurl = imgeurl;
+        this.description = description;
+        this.price = price;
+        this.manufacturer = manufacturer;
+        this.model = model;
+        this.quantityinStock = quantityinStock;
+
+
+        this.productid = productid;
+
+    }
+
+    @Override
+    public void produt() {
+        System.out.println("hp product");
+
+    }
+
+    @Override
+    public String toString() {
+        return "wirelessmouse{" +
+
+                " , imgeurl= ' " + imgeurl + '\'' +
+                ", descripyion= ' " + description + '\'' +
+                ", price = ' " + price + '\'' +
+                " , manufacturer = ' " + manufacturer + '\'' +
+                " , model=' " + model + '\'' +
+                ", quantityinstock=' " + quantityinStock + '\'' +
+
+
+                "' productid='" + productid + '\'' +
+                '}';
+
+
+    }
+}
+
+class keyboard implements hpproduct1 {
+    int model;
+    int productid;
+
+
+    int description;
+    double price;
+    double manufacturer;
+
+    int quantityinStock;
+
+    double imgeurl;
+
+    public keyboard(double imgeurl, int productid, int model, int quantityinStock, int description, double price, double manufacturer) {
+
+        this.imgeurl = imgeurl;
+        this.description = description;
+        this.price = price;
+        this.manufacturer = manufacturer;
+        this.model = model;
+        this.quantityinStock = quantityinStock;
+
+
+        this.productid = productid;
+
+    }
+
+    @Override
+    public void produt() {
+        System.out.println("hp product");
+
+    }
+
+    @Override
+    public String toString() {
+        return "keyboard{" +
+
+                " , imgeurl= ' " + imgeurl + '\'' +
+                ", descripyion= ' " + description + '\'' +
+                ", price = ' " + price + '\'' +
+                " , manufacturer = ' " + manufacturer + '\'' +
+                " , model=' " + model + '\'' +
+                ", quantityinstock=' " + quantityinStock + '\'' +
+
+
+                "' productid='" + productid + '\'' +
+                '}';
+
+
+    }
+}
+
+
+class workbackpack implements hpproduct1 {
+    int model;
+    int productid;
+
+
+    int description;
+    double price;
+    double manufacturer;
+
+    int quantityinStock;
+
+    double imgeurl;
+
+    public workbackpack(double imgeurl, int productid, int model, int quantityinStock, int description, double price, double manufacturer) {
+
+        this.imgeurl = imgeurl;
+        this.description = description;
+        this.price = price;
+        this.manufacturer = manufacturer;
+        this.model = model;
+        this.quantityinStock = quantityinStock;
+
+
+        this.productid = productid;
+
+    }
+
+    @Override
+    public void produt() {
+        System.out.println("hp product");
+
+    }
+
+    @Override
+    public String toString() {
+        return "workbackpack{" +
+
+                " , imgeurl= ' " + imgeurl + '\'' +
+                ", descripyion= ' " + description + '\'' +
+                ", price = ' " + price + '\'' +
+                " , manufacturer = ' " + manufacturer + '\'' +
+                " , model=' " + model + '\'' +
+                ", quantityinstock=' " + quantityinStock + '\'' +
+
+
+                "' productid='" + productid + '\'' +
+                '}';
+
+
+    }
+
+}
+
+class bluetoothspeaker implements hpproduct1 {
+    int model;
+    int productid;
+
+
+    int description;
+    double price;
+    double manufacturer;
+
+    int quantityinStock;
+
+    double imgeurl;
+
+    public bluetoothspeaker(double imgeurl, int productid, int model, int quantityinStock, int description, double price, double manufacturer) {
+
+        this.imgeurl = imgeurl;
+        this.description = description;
+        this.price = price;
+        this.manufacturer = manufacturer;
+        this.model = model;
+        this.quantityinStock = quantityinStock;
+
+
+        this.productid = productid;
+
+    }
+
+    @Override
+    public void produt() {
+        System.out.println("hp product");
+
+    }
+
+    @Override
+    public String toString() {
+        return "bluetoothspeaker{" +
+
+                " , imgeurl= ' " + imgeurl + '\'' +
+                ", descripyion= ' " + description + '\'' +
+                ", price = ' " + price + '\'' +
+                " , manufacturer = ' " + manufacturer + '\'' +
+                " , model=' " + model + '\'' +
+                ", quantityinstock=' " + quantityinStock + '\'' +
+
+
+                "' productid='" + productid + '\'' +
+                '}';
+
+
+    }
+
+}
+
+class pendrive implements hpproduct1 {
+    int model;
+    int productid;
+
+
+    int description;
+    double price;
+    double manufacturer;
+
+    int quantityinStock;
+
+    double imgeurl;
+
+    public pendrive(double imgeurl, int productid, int model, int quantityinStock, int description, double price, double manufacturer) {
+
+        this.imgeurl = imgeurl;
+        this.description = description;
+        this.price = price;
+        this.manufacturer = manufacturer;
+        this.model = model;
+        this.quantityinStock = quantityinStock;
+
+
+        this.productid = productid;
+
+    }
+
+    @Override
+    public void produt() {
+        System.out.println("hp product");
+
+    }
+
+    @Override
+    public String toString() {
+        return "pendrive{" +
+
+                " , imgeurl= ' " + imgeurl + '\'' +
+                ", descripyion= ' " + description + '\'' +
+                ", price = ' " + price + '\'' +
+                " , manufacturer = ' " + manufacturer + '\'' +
+                " , model=' " + model + '\'' +
+                ", quantityinstock=' " + quantityinStock + '\'' +
+
+
+                "' productid='" + productid + '\'' +
+                '}';
+
+
+    }
+
+}
+
+class chargerlaptop implements hpproduct1 {
+    int productid;
+
+    int model;
+    int description;
+    double price;
+    double manufacturer;
+
+    int quantityinStock;
+
+    double imgeurl;
+
+    public chargerlaptop(double imgeurl, int productid, int model, int quantityinStock, int description, double price, double manufacturer) {
+
+        this.imgeurl = imgeurl;
+        this.description = description;
+        this.price = price;
+        this.manufacturer = manufacturer;
+        this.model = model;
+        this.quantityinStock = quantityinStock;
+
+
+        this.productid = productid;
+
+    }
+
+    @Override
+    public void produt() {
+        System.out.println("hp product");
+
+    }
+
+    @Override
+    public String toString() {
+        return "chargerlaptop{" +
+
+                " , imgeurl= ' " + imgeurl + '\'' +
+                ", descripyion= ' " + description + '\'' +
+                ", price = ' " + price + '\'' +
+                " , manufacturer = ' " + manufacturer + '\'' +
+                " , model=' " + model + '\'' +
+                ", quantityinstock=' " + quantityinStock + '\'' +
+
+
+                "' productid='" + productid + '\'' +
+                '}';
+
+
+    }
+}
+
+class USBhub implements hpproduct1 {
+    int productid;
+
+    int model;
+    int description;
+    double price;
+    double manufacturer;
+
+    int quantityinStock;
+
+    double imgeurl;
+
+    public USBhub(double imgeurl, int productid, int model, int quantityinStock, int description, double price, double manufacturer) {
+
+        this.imgeurl = imgeurl;
+        this.description = description;
+        this.price = price;
+        this.manufacturer = manufacturer;
+        this.model = model;
+        this.quantityinStock = quantityinStock;
+
+
+        this.productid = productid;
+
+    }
+
+    @Override
+    public void produt() {
+        System.out.println("hp product");
+
+    }
+
+    @Override
+    public String toString() {
+        return "USBhub{" +
+
+                " , imgeurl= ' " + imgeurl + '\'' +
+                ", descripyion= ' " + description + '\'' +
+                ", price = ' " + price + '\'' +
+                " , manufacturer = ' " + manufacturer + '\'' +
+                " , model=' " + model + '\'' +
+                ", quantityinstock=' " + quantityinStock + '\'' +
+
+
+                "' productid='" + productid + '\'' +
+                '}';
+
+
+    }
+
 }
