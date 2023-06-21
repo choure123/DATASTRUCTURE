@@ -73,6 +73,36 @@ class Reservation {
 
     // Additional methods and behaviors
 }
+class DataStructureExample {
+    public static void main(String[] args) {
+        // ArrayList Example
+        ArrayList<String> arrayList = new ArrayList<>();
+        arrayList.add("Apple");
+        arrayList.add("Banana");
+        arrayList.add("Orange");
+        System.out.println("ArrayList: " + arrayList);
 
+        // LinkedList Example
+        LinkedList<Integer> linkedList = new LinkedList<>();
+        linkedList.add(10);
+        linkedList.add(20);
+        linkedList.add(30);
+        System.out.println("LinkedList: " + linkedList);
+
+        // HashMap Example
+        HashMap<String, Integer> hashMap = new HashMap<>();
+        hashMap.put("bhaiyu", 25);
+        hashMap.put("bittu", 30);
+        hashMap.put("bhavesh", 35);
+        System.out.println("HashMap: " + hashMap);
+
+        // PriorityQueue Example
+        PriorityQueue<Integer> priorityQueue = new PriorityQueue<>();
+        priorityQueue.add(50);
+        priorityQueue.add(30);
+        priorityQueue.add(70);
+        System.out.println("PriorityQueue: " + priorityQueue);
+    }
+}
 
 
