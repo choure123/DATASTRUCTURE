@@ -69,3 +69,74 @@ class GenericStudent<FirstName ,LastName ,RollNo, PhoneNumber>{
     }
  */
 
+class college {
+    public static void main(String[] args) {
+        student s1 = new student("sonuchoure", 2345, "mechanical", 21);
+        student s2=new student("anuj",567,"IT",23);
+        faculty f1=new faculty(32,"mechanical","blackwhite",345,"manojtiwarisir");
+        List<faculty> l4=new ArrayList<faculty>();
+        List<student> l1 = new ArrayList<student>();
+        List<student> l2 = new ArrayList<student>();
+        l2.add(s2);
+        l1.add(s1);
+        l4.add (f1);
+        System.out.println(l1);
+        System.out.println(l2);
+        System.out.println(l4);
+    }
+
+
+}
+
+class student {
+    String name;
+    double id;
+    String Department;
+    int age;
+
+    student(String n, double id, String d, int a) {
+        this.name = n;
+        this.Department = d;
+        this.id = id;
+        this.age = a;
+    }
+
+    @Override
+    public String toString() {
+        return "student{" +
+                "name='" + name + '\'' +
+                ",Department='" + Department + '\'' +
+                ",id=" + id + '\'' +
+                ",age=" + age + '\'' +
+                '}';
+    }
+}
+class faculty {
+    int age;
+    String name;
+    String DEPARTMENT;
+    String dresscolour;
+    double officeroomnumber;
+
+    faculty(int a, String d, String dc, double orn, String name) {
+
+        this.age = a;
+        this.name = name;
+        this.DEPARTMENT = d;
+        this.dresscolour = dc;
+        this.officeroomnumber = orn;
+
+
+    }
+
+    @Override
+    public String toString() {
+        return "faculty{" +
+                "name='" + name + '\'' +
+                ",age='" + age + '\'' +
+                ",DEPARTMENT='" + DEPARTMENT + '\'' +
+                ", dresscolour='" + dresscolour + '\'' +
+                ",officeroomnumber='" + officeroomnumber + '\'' +
+                '}';
+    }
+}
