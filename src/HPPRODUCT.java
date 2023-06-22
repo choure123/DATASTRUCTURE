@@ -12,6 +12,7 @@ public class HPPRODUCT {
         pendrive hp8 = new pendrive(456.5, 788, 900, 67, 234, 77889, 678);
         chargerlaptop hp9 = new chargerlaptop(456.5, 788, 900, 67, 234, 77889, 678);
         USBhub hp10 = new USBhub(456, 840, 00351, 1, 2307, 12, 1.5000);
+
         System.out.println(hp10);
         System.out.println(hp2);
         System.out.println(hp1);
