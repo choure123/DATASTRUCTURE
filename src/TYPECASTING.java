@@ -8,6 +8,8 @@ public class TYPECASTING {
         Integer i2=(int) d;
         // explicit convertion of uper value to lower value
         System.out.println(i2);
+        // int i3 = d.intValue() ;
+        //        Integer i2 =d.intValue();
     }
 }
 class Animal {
