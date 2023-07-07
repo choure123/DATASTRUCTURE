@@ -194,7 +194,7 @@ class DEMOLINKEDLIST0 {
     Node head;
 
 
-    //I have to mention the list where i am adding and i have to mention what i am adding
+    //I have to mention the list where  I am adding and I have to mention what I am adding
     public static CustomLinkedList insert(CustomLinkedList list ,int d){
         Node newNode = new Node(d);
         if(list.head == null){
