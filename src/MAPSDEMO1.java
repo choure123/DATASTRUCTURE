@@ -1,4 +1,5 @@
 import java.util.HashMap;
+import java.io.*;
 class CustomStudent{
     String name;
     String branch;
@@ -34,4 +35,6 @@ public class MAPSDEMO1 {
     }
 }
 
+
+//program to print the exception information using printStackTrace() method
 
